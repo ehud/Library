@@ -16,7 +16,7 @@ def send_email(SUBJECT='',TEXT=''):
             gmail_pwd = "password"
             FROM = 'user.name@gmail.com'
             TO = ['user.name@gmail.com'] #must be a list
-            
+
             # Prepare actual message
             message = """\From: %s\nTo: %s\nSubject: %s\n\n%s
             """ % (FROM, ", ".join(TO), SUBJECT, TEXT)
@@ -49,7 +49,7 @@ for line in fp:
        details['note']=note
        books.append(details)
     else:
-       print isbn  
+       print isbn
        failed.append(line)
 fp.close()
 
@@ -99,4 +99,4 @@ fp.close()
 # add purchased books to watch list
 fp=open("/path/to/watched_isbns.txt","a")
 fp.writelines([item['isbn'][0]+'\n' for item in books])
- 
+fp.close()
